@@ -14,18 +14,22 @@
 </head>
 <body>
     <h1>Iniciando estudos em DOM</h1>
-    <p>aqui vai o resultado</p>
+    <p>aqui vai o resultado ❤️</p>
     <p>aprendendo a usar <strong>DOM</strong> em JavaScript</p>
     <div id="msg">clique em mim</div>
 
     <script>
-        var p1 = window.document.getElementsByTagName('p')[0]
+        var p1 = document.getElementsByTagName('p')[0]
         p1.style.color = 'blue' //podemos selecionar o conteúdo pelo nome da tag e defininir qual usaremos com colchetes(se você colocar 0 será o primeiro elemento, e ssucessivamente com a ordem crescente)
-        document.write('está escrito assim: ' + p1.innerText)
+        document.write('estou utilizando o comando write: ' + p1.innerText)
         //esse comando (write), serve para escrever dentro do documento.
-        var d = window.document.getElementById('msg')//podemos selecionar o conteúdo com (ID)
+
+        var d = document.getElementById('msg')//podemos selecionar o conteúdo com (ID)
         d.style.background = 'green'
         //d.innerText = 'estou aguardando...'
+        d.style.backgroundColor = '#000 '
+
+        alert(p1.innerHTML)
     </script>
 </body>
 </html>
