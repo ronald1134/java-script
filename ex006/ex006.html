@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando números</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Somando valores</h1>
-    <input type="number" name="num" id="inum"> +
-    <input type="number" name="n" id="in">
-    <input type="button" value="Somar" onclick="somar()">
+    <div class="calculator">
+        <input type="number" name="num" id="inum" placeholder="Digite um número"> +
+        <input type="number" name="n" id="in" placeholder="Digite outro número">
+        <input type="button" value="Somar" onclick="somar()">
+    </div>
     <div id="res">resultado</div>
     <script>
 
         //aqui estou criando um sistema onde soma dois números, porém podemos mudar a soma para qualquer outra operação na linha  24.
 
         //eu utilizei função, criei 3 variáveis onde a podemos selecionar pelo querySelector e depois criei mais 3 variáveis onde duas são para ser do tipo Number para a cx1 e cx2
-        
+
         //Depois criei uma variável s para pegar a soma entre o n1 + n2
 
         //depois chamei a variável res contendo o comando do innerHTML, onde eu uso templates que abrir crazes e utilizar ${para chamar a variável}
@@ -30,6 +33,20 @@
             var n2 = Number(cx2.value)
             var s = n1 + n2
             res.innerHTML = `A soma entre ${n1} e ${n2} é de:<strong> ${s}</strong>`
+        }
+
+        var resultado = document.querySelector('div#res')
+        resultado.addEventListener('mouseenter', entrar)
+        resultado.addEventListener('mouseout', sair)
+
+        function entrar() {
+            resultado.innerHTML = ('insira valores nas box')
+            resultado.style.color = 'red'
+        }
+
+        function sair(){
+            resultado.innerHTML = ('resultado')
+            resultado.style.color = 'white'
         }
     </script>
 </body>
