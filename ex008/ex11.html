@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>identificador de localização</h1>
+    <input type="text" name="pais" id="ipais">
+    <input type="button" value="verificar" onclick="identificar()">
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function identificar(){
+            var txtpais = document.getElementById('ipais')
+            var res = document.getElementById('resultado')
+            var pais = txtpais.value.trim()
+
+            if(pais.toLowerCase() !== 'eua'){
+                res.innerHTML = '<p>Você é brasileiro 🇧🇷</p>';
+            }else{
+                res.innerHTML = '<p>Você é estrangeiro 🗽</p>';
+            }
+        }
+    </script>
+</body>
+</html>
