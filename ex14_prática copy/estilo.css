@@ -20,12 +20,13 @@ section{
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.664);
+    text-align: center;
 }
 div#foto img {
-    max-width: 250px;
-    max-height: 200px;
+    padding-top: 15px;
     border-radius: 50%;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
 }
 footer{
     text-align: center;
