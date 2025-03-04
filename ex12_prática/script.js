@@ -38,10 +38,10 @@ function verificar() {
                 img.setAttribute('src', 'image/jovem_f.jpg')
             } else if (idade < 50) {
                 //adulto
-                img.setAttribute('src', 'image/adulto_f.jpg')
+                img.setAttribute('src', 'image/adulta_f.jpg')
             } else {
                 //idoso
-                img.setAttribute('src', 'image/idoso_f.jpg')
+                img.setAttribute('src', 'image/idosa_f.jpg')
             }
         }
         res.style.textAlign = 'center'
