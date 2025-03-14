@@ -9,19 +9,29 @@ function contar() {
     var passos = Number(Passos.value);
 
     if (Inicio.value.length == 0 || Fim.value.length == 0 || Passos.value.length == 0) {
-        res.innerHTML = 'Impossível contar! Preencha todos os campos.';
-    } else if (passos <= 0) {
-        alert('Passos inválidos! Considerando passos como 1.');
-        passos = 1;
-        res.innerHTML = ''; // Limpa o conteúdo anterior
-        while (numInicio <= numFim) {
-            res.innerHTML += `${numInicio} `;
-            numInicio += passos;
-        }
+        res.innerHTML = 'inpossível contar, preencha todos os campos!';
+        //alert('[ERROR] campos vazios.');
     } else {
-        res.innerHTML = ''; // Limpa o conteúdo anterior
-        for (; numInicio <= numFim; numInicio += passos) {
-            res.innerHTML += `${numInicio} `;
+        res.innerHTML = 'Contando: <br>';
+        let inicio = Number(Inicio.value);
+        let f = Number(Fim.value);
+        let passo = Number(Passos.value);
+
+        if (passo <= 0){ //nn estou conseguindo fazer com que o valor 0 passe ser considerado 1
+            alert('Passo inválido! Considerando passo 1');
+            passo = 1
         }
+        if(inicio < f ){// contagem crescente
+            for (let contador = inicio; contador <= f; contador += passo) {
+                res.innerHTML += `${contador} \u{1F449}`
+            }
+            
+        }else{ //contagem regressiva
+            for (let contador = inicio; contador >= f; contador -=passo){
+                res.innerHTML += `${contador} \u{1F449}`
+            }
+        }
+        res.innerHTML += `\u{1F3C1}`
     }
+
 }
